@@ -1,15 +1,17 @@
 # install essential libraries
+export CODE_DIR=~/code
 sudo apt-get install build-essential
 sudo apt-get install libjpeg-dev
 sudo apt-get install libtiff5-dev
 sudo apt-get install cmake
 sudo apt-get install pkg-config
 sudo apt-get install python2.7
-sudo apt-get install git
+sudo apt-get install git 		#
 sudo apt-get install libqt4-dev
+sudo apt-get install python-qt4
+sudo apt-get install python-pip		#
 
 ### Python libraries ###
-sudo apt-get install python-pip
 
 # Now we'll pip
 # core libraries
@@ -65,10 +67,25 @@ git clone https://github.com/SU-ECE-17-7/opencv.git
 git clone https://github.com/SU-ECE-17-7/hotspotter.git
 
 ## Let's build stuff ##
+
+# Build opencv (this takes a looooong time)
+cd ~/code/opencv
+./unix_build.sh
+
 # Build hesaff
-~/code/unix_hesaff_build.sh
+cd ~/code/hesaff
+./unix_build.sh
+# Some branches have a different name. If it errors, try this:
+#~/code/hesaff/unix_hesaff_build.sh
+
 # Move it to the right place
 cp ~/code/hesaff/build/libhesaff.so ~/code/hotspotter/hstpl/extern_feat/libhesaff.so
 
-# Build opencv
-~/code/opencv/unix_flann_build.sh
+# I guess we need to rename this for some reason?
+mv ~/
+# build flann... yum
+cd ~/code/flann
+./unix_build.sh
+
+# Go back to the parent dir
+cd ~/code
