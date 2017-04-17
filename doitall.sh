@@ -1,14 +1,15 @@
 # install essential libraries
-export CODE_DIR=~/code
-sudo apt-get install build-essential
-sudo apt-get install libjpeg-dev
-sudo apt-get install libtiff5-dev
-sudo apt-get install cmake
-sudo apt-get install pkg-config
-sudo apt-get install python2.7
-sudo apt-get install git 		#
-sudo apt-get install libqt4-dev
-sudo apt-get install python-qt4
+export CODE_DIR=~/code              #
+#sudo apt-get install build-essential
+#sudo apt-get install libjpeg-dev
+#sudo apt-get install libtiff5-dev
+
+#sudo apt-get install pkg-config
+sudo apt-get install python2.7      #
+sudo apt-get install git 		    #
+#sudo apt-get install libqt4-dev
+#sudo apt-get install cmake
+sudo apt-get install python-qt4     #
 sudo apt-get install python-pip		#
 
 ### Python libraries ###
@@ -24,28 +25,34 @@ sudo pip install python-dateutil
 sudo pip install six
 
 #speed libraries
-sudo pip install Cython 
-sudo pip install pylru
+sudo pip install Cython             #
+sudo pip install pylru              #
+
+# Essential Libraries
+sudo pip install cmake              #
 
 # interactive libs
-sudo pip install ipython
-sudo pip install matplotlib
-sudo pip install python-qt
+#sudo pip install ipython
+sudo pip install matplotlib         #
+#sudo pip install python-qt
 
 # sci libs
-sudo pip install pillow
-sudo pip install numpy
-sudo pip install opencv-python
-sudo pip install pandas
-sudo pip install scipy
+sudo pip install pillow             #
+sudo pip install numpy              #
+#sudo pip install opencv-python
+sudo pip install pandas             #
+sudo pip install scipy              #
+sudo pip install pyflann            #
 
 # dev tools
-sudo pip install setuptools
-sudo pip install pyinstaller
-sudo pip install flake8
-sudo pip install pep8
-sudo pip install pyflakes
-sudo pip install pylint
+#sudo pip install setuptools
+#sudo pip install pyinstaller
+#sudo pip install flake8
+#sudo pip install pep8
+#sudo pip install pyflakes
+#sudo pip install pylint
+sudo pip install utool              #
+sudo pip install networkx           #
 
 ## On to the project ##
 ## Start with repos  ##
@@ -54,14 +61,14 @@ mkdir ~/code
 cd ~/code
 
 # FLANN - Fast Library for Approximate Nearest Neighbors
-git clone https://github.com/SU-ECE-17-7/flann.git
+git clone https://github.com/SU-ECE-17-7/flann.git                      #
 
 # Hessian Affine Keypoint Detector
 # git clone -b BRANCH https://github.com/SU-ECE-17-7/hesaff.git
-git clone https://github.com/SU-ECE-17-7/hesaff.git
+git clone https://github.com/SU-ECE-17-7/hesaff.git                     #
 
 # opencv
-git clone https://github.com/SU-ECE-17-7/opencv.git
+git clone -b hotsbranch248 https://github.com/SU-ECE-17-7/opencv.git    #
 
 # Main HotSpotter repo
 git clone https://github.com/SU-ECE-17-7/hotspotter.git
@@ -70,6 +77,7 @@ git clone https://github.com/SU-ECE-17-7/hotspotter.git
 
 # Build opencv (this takes a looooong time)
 cd ~/code/opencv
+./unix_configure.sh
 ./unix_build.sh
 
 # Build hesaff
@@ -77,6 +85,10 @@ cd ~/code/hesaff
 ./unix_build.sh
 # Some branches have a different name. If it errors, try this:
 #~/code/hesaff/unix_hesaff_build.sh
+
+# Setup HotSpotter
+cd ~/code/hotspotter
+python setup.py cython
 
 # Move it to the right place
 cp ~/code/hesaff/build/libhesaff.so ~/code/hotspotter/hstpl/extern_feat/libhesaff.so
@@ -89,3 +101,5 @@ cd ~/code/flann
 
 # Go back to the parent dir
 cd ~/code
+zenity --info --text='All done setting up.\n Feel free to run HotSpotter now.'
+
