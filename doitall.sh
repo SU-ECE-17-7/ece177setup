@@ -65,7 +65,7 @@ git clone https://github.com/SU-ECE-17-7/flann.git                      #
 
 # Hessian Affine Keypoint Detector
 # git clone -b BRANCH https://github.com/SU-ECE-17-7/hesaff.git
-git clone https://github.com/SU-ECE-17-7/hesaff.git                     #
+git clone -b next https://github.com/SU-ECE-17-7/hesaff.git                     #
 
 # opencv
 git clone -b hotsbranch248 https://github.com/SU-ECE-17-7/opencv.git    #
