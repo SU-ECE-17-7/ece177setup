@@ -3,14 +3,33 @@ export CODE_DIR=~/code              #
 #sudo apt-get install build-essential
 #sudo apt-get install libjpeg-dev
 #sudo apt-get install libtiff5-dev
+echo "Do you want to install all packages regardless of size? [y/n] "
+read dec
+#echo "Which branch of HotSpotter do you want? Just press [ENTER] for recommended (master)"
+#read hsb
+echo "Which branch of hesaff do you want? Just press [ENTER] for recommended branch (next):"
+read hesaffb
 
-#sudo apt-get install pkg-config
-sudo apt-get install python2.7      #
-sudo apt-get install git 		    #
-#sudo apt-get install libqt4-dev
-#sudo apt-get install cmake
-sudo apt-get install python-qt4     #
-sudo apt-get install python-pip		#
+# If user doesn't want to think about it anymore
+if [[ "$dec" == "y" ]]
+then
+    #sudo apt-get install -y pkg-config
+    sudo apt-get install -y python2.7      #
+    sudo apt-get install -y git 		    #
+    #sudo apt-get install -y libqt4-dev
+    #sudo apt-get install -y cmake
+    sudo apt-get install -y python-qt4     #
+    sudo apt-get install -y python-pip		#
+else
+    #sudo apt-get install pkg-config
+    sudo apt-get install python2.7      #
+    sudo apt-get install git 		    #
+    #sudo apt-get install libqt4-dev
+    #sudo apt-get install cmake
+    sudo apt-get install python-qt4     #
+    sudo apt-get install python-pip		#
+fi
+
 
 ### Python libraries ###
 
@@ -65,7 +84,12 @@ git clone https://github.com/SU-ECE-17-7/flann.git                      #
 
 # Hessian Affine Keypoint Detector
 # git clone -b BRANCH https://github.com/SU-ECE-17-7/hesaff.git
-git clone -b next https://github.com/SU-ECE-17-7/hesaff.git                     #
+if [ -n "$hesaffb" ]
+then
+    git clone -b "$hesaff" https://github.com/SU-ECE-17-7/hesaff.git                     #
+else
+    git clone -b next https://github.com/SU-ECE-17-7/hesaff.git                     #
+fi
 
 # opencv
 git clone -b hotsbranch248 https://github.com/SU-ECE-17-7/opencv.git    #
