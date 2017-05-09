@@ -52,7 +52,8 @@ sudo pip install cmake              #
 
 # interactive libs
 #sudo pip install ipython
-sudo pip install matplotlib         #
+sudo pip uninstall matplotlib         #
+sudo pip install matplotlib==1.3.1
 #sudo pip install python-qt
 
 # sci libs
