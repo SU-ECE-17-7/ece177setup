@@ -14,6 +14,7 @@ read hesaffb
 if [[ "$dec" == "y" ]]
 then
     #sudo apt-get install -y pkg-config
+    sudo apt-get install -y libfreetype6-dev
     sudo apt-get install -y python2.7      #
     sudo apt-get install -y git 		    #
     #sudo apt-get install -y libqt4-dev
@@ -22,6 +23,7 @@ then
     sudo apt-get install -y python-pip		#
 else
     #sudo apt-get install pkg-config
+    sudo apt-get install libfreetype6-dev
     sudo apt-get install python2.7      #
     sudo apt-get install git 		    #
     #sudo apt-get install libqt4-dev
