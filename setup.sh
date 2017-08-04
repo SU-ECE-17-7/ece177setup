@@ -5,7 +5,7 @@ export CODE_DIR=~/code              #
 #sudo apt-get install libtiff5-dev
 echo "Do you want to install all packages regardless of size? [y/n] "
 read dec
-echo "Which branch of HotSpotter do you want? Just press [ENTER] for recommended (matt)"
+echo "Which branch of HotSpotter do you want? Just press [ENTER] for recommended (oldnewjoshmatt)"
 read hsb
 echo "Which branch of hesaff do you want? Just press [ENTER] for recommended branch (next):"
 read hesaffb
@@ -100,7 +100,7 @@ if [ -n "$hsb" ]
 then
     git clone -b "$hsb" https://github.com/SU-ECE-17-7/hotspotter.git
 else
-    git clone https://github.com/SU-ECE-17-7/hotspotter.git
+    git clone -b oldnewjoshmatt https://github.com/SU-ECE-17-7/hotspotter.git
 fi
 
 ## Let's build stuff ##
