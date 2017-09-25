@@ -21,6 +21,7 @@ then
     #sudo apt-get install -y cmake
     sudo apt-get install -y python-qt4     #
     sudo apt-get install -y python-pip		#
+    sudo apt-get install -y python-matplotlib
 else
     #sudo apt-get install pkg-config
     sudo apt-get install libfreetype6-dev
@@ -30,6 +31,7 @@ else
     #sudo apt-get install cmake
     sudo apt-get install python-qt4     #
     sudo apt-get install python-pip		#
+    sudo apt-get install python matplotlib
 fi
 
 
@@ -54,8 +56,8 @@ sudo pip install cmake              #
 
 # interactive libs
 #sudo pip install ipython
-sudo pip uninstall matplotlib         #
-sudo pip install matplotlib==1.3.1
+#sudo pip uninstall matplotlib         #
+#sudo pip install matplotlib==1.3.1
 #sudo pip install python-qt
 
 # sci libs
