@@ -85,26 +85,26 @@ mkdir ~/code
 cd ~/code
 
 # FLANN - Fast Library for Approximate Nearest Neighbors
-git clone https://github.com/SU-ECE-17-7/flann.git                      #
+git clone https://github.com/SU-ECE-18-7/flann.git                      #
 
 # Hessian Affine Keypoint Detector
-# git clone -b BRANCH https://github.com/SU-ECE-17-7/hesaff.git
+# git clone -b BRANCH https://github.com/SU-ECE-18-7/hesaff.git
 if [ -n "$hesaffb" ]
 then
-    git clone -b "$hesaffb" https://github.com/SU-ECE-17-7/hesaff.git                     #
+    git clone -b "$hesaffb" https://github.com/SU-ECE-18-7/hesaff.git                     #
 else
-    git clone -b next https://github.com/SU-ECE-17-7/hesaff.git                     #
+    git clone -b next https://github.com/SU-ECE-18-7/hesaff.git                     #
 fi
 
 # opencv
-git clone -b hotsbranch248 https://github.com/SU-ECE-17-7/opencv.git    #
+git clone -b hotsbranch248 https://github.com/SU-ECE-18-7/opencv.git    #
 
 # Main HotSpotter repo
 if [ -n "$hsb" ]
 then
-    git clone -b "$hsb" https://github.com/SU-ECE-17-7/hotspotter.git
+    git clone -b "$hsb" https://github.com/SU-ECE-18-7/hotspotter.git
 else
-    git clone -b oldnewjoshmatt https://github.com/SU-ECE-17-7/hotspotter.git
+    git clone -b oldnewjoshmatt https://github.com/SU-ECE-18-7/hotspotter.git
 fi
 
 ## Let's build stuff ##
